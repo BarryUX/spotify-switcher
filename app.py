@@ -1,11 +1,18 @@
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+app.config['DEBUG'] = False
+
 
 # Home route (GET)
+
+
 @app.route('/', methods=['GET'])
 def home():
     return "Welcome to Spotify Switcher!"
+if __name__ == "__main__":
+    app.run()
+
 
 # Switch profile route (supports POST and GET for debugging)
 @app.route('/switch-profile', methods=['GET', 'POST'])
@@ -36,3 +43,4 @@ def method_not_allowed(e):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001)
+
