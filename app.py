@@ -33,5 +33,6 @@ def user_profile():
 def method_not_allowed(e):
     return jsonify({"error": "Method not allowed. Check the HTTP method for this route."}), 405
 
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5001)
